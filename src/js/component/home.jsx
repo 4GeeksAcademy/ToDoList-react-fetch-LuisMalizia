@@ -57,6 +57,11 @@ const Home = () => {
 		};
 
 		fetch(`https://playground.4geeks.com/todo/todos/${tareaId}`, requestOptions)
+			.then((response) => {
+				if (response.status == 204) {
+					callUser();
+				}
+			})
 			.catch((error) => console.error(error))
 	}
 
